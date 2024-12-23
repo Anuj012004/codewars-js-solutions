@@ -30,7 +30,7 @@
 
 // A Boolean value (True or False).
 
-
+// Solution....
 function logicalCalc(array, op) {
     let result = array[0];
     for (let i = 1; i < array.length; i++) { 
@@ -45,3 +45,17 @@ function logicalCalc(array, op) {
     return result;
   }
   
+// Solution using reduce
+
+function logicalCalc(array, op){
+  //your code here
+  return array.reduce((a,c)=>{
+    if(op==='AND'){
+      return a && c
+    }else if (op==='OR'){
+      return a || c
+    }else if(op==='XOR'){
+      return a !== c
+    }
+  })
+  }
